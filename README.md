@@ -65,4 +65,4 @@ Here are some useful links that I found that might be of help while setting up t
 
 Logging into Firebase via the terminal proves that every other CLI command required for the course is achievable.
 
-**PS**: You would currently not be able to utilise the signup and login functionality on the app as they have not been initialised on the Firebase console.
+**PS**: You would currently not be able to utilise the signup and login functionality on the actual application as they have not been initialised on the Firebase console.
