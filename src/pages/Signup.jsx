@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { signInWithGoogle, signInWithGithub, signUp } from "../helpers/auth";
-// import { app } from "../services/firebase";
-// import { getAuth } from "firebase/auth";
+import { signUp } from "../helpers/auth";
 
 function Signup() {
   const [user, setUser] = useState({ email: "", password: "" });
   const [error, setError] = useState(null);
-  // const auth = getAuth(app);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,25 +22,13 @@ function Signup() {
     setUser((prevState) => ({ ...prevState, [e.target.name]: e.target.value }));
   };
 
-  // const googleSignIn = (e) => {
-  //   signInWithGoogle().catch((err) => {
-  //     setError(err.message);
-  //   });
-  // };
-
-  // const githubSignIn = (e) => {
-  //   signInWithGithub().catch((err) => {
-  //     setError(err.message);
-  //   });
-  // };
-
   return (
     <div>
       <div>
         <form autoComplete="off" onSubmit={handleSubmit}>
           <h1>Sign Up</h1>
           <p>Fill in the form below to sign up for DeraTest.</p>
-          <div>
+          <div style={{ marginBottom: "10px" }}>
             <input
               name="email"
               type="text"
@@ -57,7 +41,7 @@ function Signup() {
               <span>Email</span>
             </label>
           </div>
-          <div>
+          <div style={{ marginBottom: "10px" }}>
             <input
               name="password"
               onChange={handleChange}
@@ -73,16 +57,10 @@ function Signup() {
           <div>
             {error ? <p>{error}</p> : null}
             <button title="Login" aria-label="Login to DheraGram" type="submit">
-              Login
+              Signup
             </button>
           </div>
         </form>
-
-        <div>
-          <p>
-            Already have an account? <Link to="/login">Sign In</Link>
-          </p>
-        </div>
       </div>
     </div>
   );

@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-// import { signIn } from "../helpers/auth";
-import { signIn, signInWithGithub, signInWithGoogle } from "../helpers/auth";
+import { signIn } from "../helpers/auth";
 
 function Login() {
   const [user, setUser] = useState({ email: "", password: "" });
   const [error, setError] = useState(null);
-  // const auth = getAuth(app);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,25 +22,13 @@ function Login() {
     setUser((prevState) => ({ ...prevState, [e.target.name]: e.target.value }));
   };
 
-  // const googleSignIn = (e) => {
-  //   signInWithGoogle().catch((err) => {
-  //     setError(err.message);
-  //   });
-  // };
-
-  // const githubSignIn = (e) => {
-  //   signInWithGithub().catch((err) => {
-  //     setError(err.message);
-  //   });
-  // };
-
   return (
     <div>
       <div>
         <form autoComplete="off" onSubmit={handleSubmit}>
           <h1>Sign In</h1>
           <p>Fill in the form below to sign in to your account.</p>
-          <div>
+          <div style={{ marginBottom: "10px" }}>
             <input
               name="email"
               type="text"
@@ -56,7 +41,7 @@ function Login() {
               <span>Email</span>
             </label>
           </div>
-          <div>
+          <div style={{ marginBottom: "10px" }}>
             <input
               name="password"
               onChange={handleChange}
@@ -76,12 +61,6 @@ function Login() {
             </button>
           </div>
         </form>
-
-        <div>
-          <p>
-            Don't have an account? <Link to="/signup">Sign Up</Link>
-          </p>
-        </div>
       </div>
     </div>
   );

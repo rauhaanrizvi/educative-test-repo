@@ -8,14 +8,3 @@ export function signUp(email, password) {
 export function signIn(email, password) {
   return auth().signInWithEmailAndPassword(email, password);
 }
-
-/**setting up auth providers  */
-export function signInWithGoogle() {
-  const provider = new auth.GoogleAuthProvider();
-  return auth().signInWithPopup(provider);
-}
-
-export function signInWithGithub() {
-  const provider = new auth.GithubAuthProvider();
-  return auth().signInWithPopup(provider);
-}
