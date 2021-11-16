@@ -7,13 +7,7 @@ import firebase from "firebase";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDNv524ovAVcTzN8ZsKc5hFkGp0-krGF8E",
-  authDomain: "educative-test-cfceb.firebaseapp.com",
-  projectId: "educative-test-cfceb",
-  storageBucket: "educative-test-cfceb.appspot.com",
-  messagingSenderId: "302171592594",
-  appId: "1:302171592594:web:8e17ea99e18ac710e7934b",
-  measurementId: "G-XGJ6GT9NPX",
+  //paste firebase config here
 };
 
 // Initialize Firebase

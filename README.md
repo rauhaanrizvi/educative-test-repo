@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+## Educative Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Demo Firebase project to test its usability on Educative. The goal of this documentation is to log in to Firebase from the terminal.
 
-## Available Scripts
+## Built With
 
-In the project directory, you can run:
+- ReactJS.
+- Firebase.
 
-### `npm start`
+## Steps to Reproduce
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Clone repo/ Download zip file
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+git clone https://github.com/chideraao/educative-test-repo.git
+cd educative-test
+```
 
-### `npm test`
+2. Install the dependencies.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm install
+```
 
-### `npm run build`
+3. Initialise your firebase project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Create a new Firebase project with your Google account. Use this [Link](https://console.firebase.google.com/) to create a new project.
+- Name your project. Disable Google Analytics(optional).
+- On the console, add a Firebase app to your project. Select a Web app(just beside the android icon).
+- Register the app and add the Firebase SDK. The config object should be pasted within the `'firebase.js'` file located in the `'src/services'` folder.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In the event of any errors while initializing the Firebase project, check out the [Firebase Documentation](https://firebase.google.com/docs/web/setup)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Install the Firebase CLI
 
-### `npm run eject`
+```
+npm install -g firebase-tools
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+5. To use the Firebase CLI, you would first need to log in to your Google account via the terminal. The normal way to go about that would be by running the command below:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+firebase login
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+However, this would require you to provide authentication from within the same browser environment, and I anticipate there might be some limitations due to the docker environment(not so sure lol). I might suggest running either of these commands:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+firebase login --no-localhost
+```
 
-## Learn More
+or
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+firebase login:ci
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Here are some useful links that I found that might be of help while setting up the Firebase CLI:
 
-### Code Splitting
+- [Firebase CLI Documentation](https://firebase.google.com/docs/cli#sign-in-test-cli)
+- [Github](https://github.com/firebase/firebase-tools#configuration-commands)
+- [Stack Overflow](https://stackoverflow.com/a/43990831/11698466)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Conclusion
 
-### Analyzing the Bundle Size
+Logging into Firebase via the terminal proves that every other CLI command required for the course is achievable.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**PS**: You would currently not be able to utilise the signup and login functionality on the app as they have not been initialised on the Firebase console.
