@@ -43,16 +43,10 @@ npm install -g firebase-tools
 firebase login
 ```
 
-However, this would require you to provide authentication from within the same browser environment, and I anticipate there might be some limitations due to the docker environment(not so sure lol). I might suggest running either of these commands:
+However, this would require you to provide authentication from within the same browser environment, and I anticipate there might be some limitations due to the docker environment(not so sure lol). If that's the case, I would suggest running this command:
 
 ```
 firebase login --no-localhost
-```
-
-or
-
-```
-firebase login:ci
 ```
 
 Here are some useful links that I found that might be of help while setting up the Firebase CLI:
